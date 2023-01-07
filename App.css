@@ -31,11 +31,13 @@
   height: 80px;
 }
 .header {
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   height: 90px;
   display: flex;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: +4;
 }
 .nav-menu {
   display: flex;
@@ -242,7 +244,10 @@
   border-bottom: 1px solid rgb(202, 202, 202);
   transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
-
+.myswiper {
+  width: 100%;
+  height: 90vh;
+}
 /* hamburger */
 
 .checkbox {
@@ -353,11 +358,7 @@
 
 /* slider */
 .slider {
-  height: 90vh;
-}
-.swiper {
-  width: 100%;
-  height: 100%;
+  height: 120vh;
 }
 
 .swiper-slide {
@@ -377,11 +378,37 @@
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+  margin-top: 70px;
 }
 
 .swiper-slide img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 40%;
   object-fit: cover;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+  color: #577592;
+  opacity: 0.8;
+}
+.swiper-button-prev {
+  background-image: url(./image/arrow-left.png);
+  /* transform: rotate(180deg); */
+}
+.swiper-button-next {
+  background-image: url(./image/arrow-left.png);
+  transform: rotate(180deg);
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+.flex-img {
+  display: flex;
 }
