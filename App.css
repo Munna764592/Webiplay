@@ -37,7 +37,8 @@
   align-items: center;
   position: fixed;
   width: 100%;
-  z-index: +4;
+  z-index: +5;
+  background-color: white;
 }
 .nav-menu {
   display: flex;
@@ -80,7 +81,7 @@
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  opacity: 0;
+  display: none;
   transition: 0.5s ease-in-out;
 }
 #my-service {
@@ -88,7 +89,7 @@
 }
 .menu-2:hover #services {
   opacity: 1;
-  z-index: 2001;
+  display: block;
   transform: translateY(22px);
 }
 #my-pages {
@@ -105,13 +106,13 @@
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  opacity: 0;
+  display: none;
   transition: 0.5s ease-in-out;
 }
 
 .pages:hover #pages {
   opacity: 1;
-  z-index: 2001;
+  display: block;
   transform: translateY(22px);
 }
 #case-study {
@@ -121,16 +122,14 @@
   border-radius: 5px;
   transform: translateY(75px);
   /* left:5%; */
-  z-index: -2;
+  display: none;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  opacity: 0;
   transition: 0.5s ease-in-out;
 }
 .case-study:hover #case-study {
-  opacity: 1;
-  z-index: 2001;
+  display: block;
   transform: translateY(22px);
 }
 .test {
@@ -145,19 +144,15 @@
   border-radius: 5px;
   transform: translateY(75px);
   /* left:5%; */
-  z-index: -90;
+  display: none;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  opacity: 0;
   transition: 0.5s ease-in-out;
 }
 .blog:hover #blog {
-  opacity: 1;
+  display: block;
   transition: 0.5s ease-in-out;
-
-  position: absolute;
-  z-index: 2001;
   transform: translateY(22px);
 }
 .menu-bar a {
@@ -246,7 +241,7 @@
 }
 .myswiper {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
 }
 /* hamburger */
 
@@ -255,7 +250,6 @@
 }
 
 .button {
-  position: relative;
   background-color: rgb(255, 128, 0);
   height: 2rem;
   width: 2rem;
@@ -272,12 +266,12 @@
 }
 
 .background {
-  height: 100vh;
+  height: 114vh;
   width: 2px;
-  position: absolute;
+  position: fixed;
   left: 100%;
   top: -14%;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   z-index: +5;
   transition: 0.5s;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
@@ -291,16 +285,8 @@
   transition: 0.5s;
 }
 .checkbox:checked ~ .button {
-  right: 28.5%;
+  right: 25%;
   transition: 0.5s;
-}
-.checkbox:checked ~ .header {
-  opacity: 1;
-}
-.checkbox:checked ~ .nav-menu {
-  opacity: 1;
-  width: 100%;
-  right: 0;
 }
 
 /* styling hamb ICON */
@@ -357,28 +343,26 @@
 }
 
 /* slider */
-.slider {
-  height: 120vh;
-}
-
-.swiper-slide {
+.swiper-slide,
+.swiper-slide2,
+.swiper-slide3 {
   text-align: center;
   font-size: 18px;
-  background: #fff;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
-  margin-top: 70px;
+  position: relative;
+  z-index: -1;
+  margin-top: 90px;
+}
+.swiper-slide {
+  background-color: #f15b26;
+}
+.swiper-slide3 {
+  background-color: #fcb03b;
+}
+.swiper-slide2 {
+  background-color: #265c86;
 }
 
 .swiper-slide img {
@@ -395,7 +379,7 @@
   width: 70px;
   height: 70px;
   color: #577592;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 .swiper-button-prev {
   background-image: url(./image/arrow-left.png);
@@ -411,4 +395,42 @@
 }
 .flex-img {
   display: flex;
+  /* background-color: #4cc2c0; */
+  width: 100%;
+}
+.content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.heading {
+  font-size: 50px;
+  text-align: left;
+  margin-top: 50px;
+}
+.para {
+  text-align: left;
+  color: white;
+  font-size: 25px;
+  margin-top: 20px;
+}
+.btn_front {
+  background-color: #183b56;
+  border: none;
+  border-radius: 50px;
+  padding: 15px;
+  color: white;
+  width: 200px;
+  font-size: 20px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  transition: 0.2s linear;
+}
+.btn_front:hover {
+  transform: scale(1.1);
+}
+.h {
+  background-color: #183b56;
+  height: 300px;
+  width: 100%;
 }
